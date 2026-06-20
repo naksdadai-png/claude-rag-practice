@@ -1,0 +1,295 @@
+.topbar {
+  height: var(--topbar-height);
+  min-height: var(--topbar-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 0;
+  gap: 0;
+  z-index: 50;
+  position: relative;
+}
+
+.topbar-left {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-right: 1px solid var(--color-border);
+  height: 100%;
+}
+
+.topbar-title-icon {
+  color: var(--color-accent);
+}
+
+.topbar-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.topbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+  padding-left: 16px;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--color-border);
+  margin: 0 4px;
+}
+
+/* Token Gauge */
+.token-gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+}
+
+.token-gauge-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.token-numbers {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-subtle);
+}
+
+.token-bar {
+  height: 4px;
+  background: var(--color-surface-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.token-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.token-bar-green { background: var(--color-green); }
+.token-bar-amber { background: var(--color-amber); }
+.token-bar-red { background: var(--color-red); }
+
+/* Dropdown Wrapper */
+.topbar-dropdown-wrap {
+  position: relative;
+}
+
+/* Badge Buttons */
+.topbar-badge-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.topbar-badge-btn:hover {
+  border-color: var(--color-text-subtle);
+  background: var(--color-surface-3);
+  color: var(--color-text);
+}
+
+.topbar-badge-btn svg.open {
+  transform: rotate(180deg);
+}
+
+.badge-label {
+  color: var(--color-text-muted);
+}
+
+.badge-tier {
+  font-size: 10px;
+  padding: 1px 5px;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* RAG Quality Badge */
+.badge-quality {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.quality-green .badge-quality { color: var(--color-green); }
+.quality-amber .badge-quality { color: var(--color-amber); }
+.quality-purple .badge-quality { color: var(--color-purple); }
+
+.quality-btn.quality-green { border-color: rgba(63, 185, 80, 0.3); }
+.quality-btn.quality-amber { border-color: rgba(227, 179, 65, 0.3); }
+.quality-btn.quality-purple { border-color: rgba(163, 113, 247, 0.3); }
+
+/* User Button */
+.topbar-user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.topbar-user-btn:hover {
+  border-color: var(--color-text-subtle);
+  background: var(--color-surface-3);
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  background: var(--color-accent-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.user-dept {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+/* Dropdown Panel */
+.topbar-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 200;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-label {
+  padding: 10px 12px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 4px 0;
+}
+
+.dropdown-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  transition: background 0.1s, color 0.1s;
+  text-align: left;
+}
+
+.dropdown-option:hover {
+  background: var(--color-accent-bg);
+  color: var(--color-text);
+}
+
+.dropdown-option.active {
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+}
+
+.dropdown-option-sub {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+}
+
+.quality-label {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.quality-dot-green { color: var(--color-green); }
+.quality-dot-amber { color: var(--color-amber); }
+.quality-dot-purple { color: var(--color-purple); }
+
+/* User Dropdown Extras */
+.user-detail {
+  padding: 8px 12px 10px;
+}
+
+.user-detail-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.user-detail-email {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.user-detail-dept {
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  margin-top: 2px;
+}
+
+.logout-option {
+  color: var(--color-red) !important;
+  justify-content: flex-start !important;
+  gap: 8px;
+}
+
+.logout-option:hover {
+  background: var(--color-red-bg) !important;
+}
